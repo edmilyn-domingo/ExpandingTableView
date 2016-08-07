@@ -33,6 +33,7 @@ public class ExpandingTableViewController: UITableViewController, ExpandingTable
         switch expandedIndexPath {
         case .Some(let expandedIndexPath) where expandedIndexPath == indexPath:
             cell.showDetails = true
+            cell.detailViewHeightConstraint.constant = cell.detailViewHeightConstraintConstant
         default:
             cell.showDetails = false
         }
@@ -53,6 +54,20 @@ public class ExpandingTableViewController: UITableViewController, ExpandingTable
             self.tableView(tableView, didSelectRowAtIndexPath: indexPath)
         default:
             expandedIndexPath = indexPath
+        }
+    }
+    
+    
+    /// Expands the cell of selected index 
+    /// Subclases may override, but must call super.
+    override public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
+        let cell = tableView.dequeueReusableCellWithIdentifier(ExpandingTableViewCell.reuseId) as! ExpandingTableViewCell
+        switch expandedIndexPath {
+        case .Some(let expandedIndexPath) where expandedIndexPath == indexPath:
+            return cell.mainContainerViewHeight.constant + cell.detailViewHeightConstraintConstant
+        default:
+            cell.showDetails = false
+            return cell.mainContainerViewHeight.constant
         }
     }
 }

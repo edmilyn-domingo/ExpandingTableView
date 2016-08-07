@@ -171,6 +171,7 @@
 		04FB261A1B1EE47800D50FC4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "József Vesza";
 				TargetAttributes = {
@@ -419,6 +420,7 @@
 				04FB263B1B1EE47900D50FC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04FB263C1B1EE47900D50FC4 /* Build configuration list for PBXNativeTarget "ExpandingTableViewTests" */ = {
 			isa = XCConfigurationList;
@@ -427,6 +429,7 @@
 				04FB263E1B1EE47900D50FC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
