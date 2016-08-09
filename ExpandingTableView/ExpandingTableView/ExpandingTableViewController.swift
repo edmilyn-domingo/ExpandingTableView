@@ -36,6 +36,7 @@ public class ExpandingTableViewController: UITableViewController, ExpandingTable
             cell.detailViewHeightConstraint.constant = cell.detailViewHeightConstraintConstant
         default:
             cell.showDetails = false
+            cell.detailViewHeightConstraint.constant = 0
         }
         
         return cell
